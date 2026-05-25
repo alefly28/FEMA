@@ -1,36 +1,140 @@
+<html lang="it">
 <head>
-<link rel="stylesheet" href="CSS_prodotti.css">
+    <meta charset="UTF-8">
+    <style>
+        /* CSS prodotti */
+        body {
+            margin: 0;
+            font-family: 'Lucida Sans Unicode', sans-serif;
+        }
+
+        .tabella-principale {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabella-specifiche {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 20px;
+            border-collapse: collapse;
+        }
+
+        .colonna-immagine {
+            width: 40%;
+            vertical-align: top;
+        }
+
+        .colonna-testo {
+            width: 60%;
+            vertical-align: top;
+        }
+
+        .immagine-prodotto {
+            width: 100%;
+            box-shadow: 0 10px 25px lightgray;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .contenitore-testo {
+            margin: 40px;
+            background-color: white;
+        }
+
+        .titolo-prodotto {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .titolo-descrizione {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .testo-descrizione {
+            font-size: 18px;
+            color: #515154;
+            margin-bottom: 30px;
+        }
+
+        .bottone-carrello {
+            background-color: #0071E3;
+            color: white;
+            border: none;
+            font-family: sans-serif;
+            font-size: 14px;
+            border-radius: 20px;
+            padding: 10px 24px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .titolo-specifiche {
+            margin: 30px;
+            font-size: 22px;
+        }
+
+        .colonna-specifiche {
+            width: 50%;
+            vertical-align: top;
+        }
+
+        .contenuto-specifiche {
+            margin: 30px;
+        }
+
+        .sottotitolo {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .lista-specifiche {
+            margin-left: 20px;
+            margin-top: 6px;
+            color: #515154;
+            margin-bottom: 20px;
+        }
+
+        .prezzo {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .prezzo-blu {
+            color: blue;
+            font-weight: 700;
+        }
+
+        .titolo-requisiti {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-<table width="100%" cellspacing="0" cellpadding="0">
+
+<table class="tabella-principale" cellspacing="0" cellpadding="0">
     <tr>
-        <td width="40%" valign="top">
-            <img src="djineo2.jpg" style="width: 100%; box-shadow: 0 10px 25px lightgray; border-radius: 20px 0 0 20px;">
+        <td class="colonna-immagine">
+            <img src="djineo2.jpg" class="immagine-prodotto">
         </td>
-
-        <td width="60%" valign="top">
-            <div style="margin:40px; background-color:white">
-
-                <div style="font-size:44px; font-weight:700; margin-bottom:20px; ">
-                    DJI DJI Neo 2
-                </div>
-
-                <div style="font-size:22px; font-weight:600; margin-bottom:10px;">
-                    Descrizione
-                </div>
-
-                <div style="font-size:18px; color:#515154; margin-bottom:30px; color:#515154;">
+        <td class="colonna-testo">
+            <div class="contenitore-testo">
+                <div class="titolo-prodotto">DJI Neo 2</div>
+                <div class="titolo-descrizione">Descrizione</div>
+                <div class="testo-descrizione">
                     Il DJI Neo è un micro-drone ultraleggero pensato per vlog, selfie e riprese rapide: estremamente compatto, può decollare dal palmo della mano, offre stabilizzazione elettronica, tracciamento automatico del soggetto e controlli semplificati anche senza radiocomando. È ideale per creator alle prime armi e per riprese spontanee in mobilità.
-
                 </div>
-
                 <div class="scheda-prodotto">
-                    <button onclick="
-                    let carrello = JSON.parse(localStorage.getItem('carrello_spesa')) || [];
-                    carrello.push({ nome: 'Drone Neo 2', prezzo: 230 });
-                    localStorage.setItem('carrello_spesa', JSON.stringify(carrello));
-                    location.href='carrello.html';"
-                            style="background-color: #0071E3; color: white; border: none; font-family: sans-serif; font-size: 14px; border-radius: 20px; padding: 10px 24px; cursor: pointer; font-weight: 600;">
+                    <button class="bottone-carrello" onclick="
+                        let carrello = JSON.parse(localStorage.getItem('carrello_spesa')) || [];
+                        carrello.push({ nome: 'Drone Neo 2', prezzo: 230 });
+                        localStorage.setItem('carrello_spesa', JSON.stringify(carrello));
+                        location.href='carrello.html';">
                         Aggiungi al carrello
                     </button>
                 </div>
@@ -38,56 +142,42 @@
         </td>
     </tr>
 </table>
-<table width="100%" cellspacing="0" cellpadding="0" style="max-width:1200px; margin:40px auto;  background-color:white;border-radius:20px; border-collapse:collapse;">
 
+<table class="tabella-specifiche" cellspacing="0" cellpadding="0">
     <tr>
         <td colspan="2">
-            <div style="margin:30px; font-size:22px;">
-                <b>Specifiche e compatibilità</b>
-            </div>
+            <div class="titolo-specifiche"><b>Specifiche e compatibilità</b></div>
         </td>
     </tr>
-
     <tr>
-        <td width="50%" valign="top">
-            <div style="margin:30px;">
-
-                <div style="font-size:18px; font-weight:600; margin-bottom:10px;">
-                    <b>Specifiche tecniche</b>
-                </div>
-
+        <td class="colonna-specifiche">
+            <div class="contenuto-specifiche">
+                <div class="sottotitolo"><b>Specifiche tecniche</b></div>
                 <b>Materiali</b>
-                <ul style="margin-left:20px; margin-top:6px; color:#515154;">
+                <ul class="lista-specifiche">
                     <li>Plastica rinforzata (ABS/PC) per la struttura principale</li>
                     <li>Componenti in fibra di carbonio o compositi leggeri per bracci e parti strutturali</li>
                     <li>Eliche in nylon/carbon-reinforced leggere e rigide</li>
                     <li>Metallo (alluminio/acciaio) per viti, supporti e motori brushless</li>
                     <li>Guarnizioni in silicone per ammortizzazione e protezione</li>
-                   
                 </ul>
-
             </div>
         </td>
-
-        <td width="50%" valign="top">
-            <div style="margin:30px;">
-
-                <div style="font-size:18px; margin-bottom:10px; ">
-                    <b>Requisiti di sistema</b>
-                </div>
-
-                <ul style="margin-left:20px; margin-top:6px; color:#515154;">
+        <td class="colonna-specifiche">
+            <div class="contenuto-specifiche">
+                <div class="titolo-requisiti"><b>Requisiti di sistema</b></div>
+                <ul class="lista-specifiche">
                     <li>App DJI Fly su smartphone/tablet (iOS o Android) per controllo completo</li>
                     <li>Radiocomando compatibile (es: RC-N2 o RC-2) per volo e trasmissione video</li>
                 </ul>
-                <div style="font-size:18px; margin-bottom:10px;">
+                <div class="prezzo">
                     <b>Prezzo:</b>
-                    <span style="color:blue; font-weight:700;">230€</span>
+                    <span class="prezzo-blu">230€</span>
                 </div>
             </div>
         </td>
     </tr>
-
 </table>
 
 </body>
+</html>
